@@ -6,4 +6,5 @@ Rails.application.routes.draw do
       post 'registration'
     end
   end
+  root 'books#index'
 end
