@@ -1,0 +1,6 @@
+<p>本の登録が完了しました！</p>
+<%= link_to(image_tag(@book.image_url, style: "width:70px;height: 100px;"), @book.detail_url) %>
+<%= @book.title %><br>
+<%= @book.author %><br>
+<%= @book.publisher %><br>
+<%= link_to '一覧画面に戻る', books_path %>
