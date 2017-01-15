@@ -24,10 +24,7 @@ class BooksController < ApplicationController
       retry
     end
 
-    binding.pry
-
     # 本のタイトル,画像URL, 詳細ページURLの取得
-
     search_result.items.each do |item|
       book = Book.new(
         title: item.get('ItemAttributes/Title'),
