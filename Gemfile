@@ -48,3 +48,8 @@ end
 gem 'pry-rails'
 gem 'devise'
 gem 'amazon-ecs'
+
+# bootstrapの読み込み
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
