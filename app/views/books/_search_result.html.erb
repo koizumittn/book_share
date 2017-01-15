@@ -1,18 +1,18 @@
 <% if @books.present? %>
   <% @books.each do |book| %>
     <div class="col-xs-6 col-lg-4">
-      <%= link_to (image_tag(book.image_url, style: "width: 70px;height: 100px;display: inline-block;")), book.detail_url %><br>
-      <%= book.title %><br>
-      <%= book.author %><br>
-      <%= book.publisher %><br>
-      <%= form_for book, url: registration_books_path do |f| %>
-        <%= f.hidden_field :title %>
-        <%= f.hidden_field :image_url %>
-        <%= f.hidden_field :detail_url %>
-        <%= f.hidden_field :author %>
-        <%= f.hidden_field :publisher %>
-        <%= f.submit '登録' %>
+      <div class="book_list">
+          <%= link_to (image_tag(book.image_url)), book.detail_url %><br><hr>
+        <%= book.title %><br><hr>
+        <%= form_for book, url: registration_books_path do |f| %>
+          <%= f.hidden_field :title %>
+          <%= f.hidden_field :image_url %>
+          <%= f.hidden_field :detail_url %>
+          <%= f.hidden_field :author %>
+          <%= f.hidden_field :publisher %>
+          <%= f.submit '登録', class: :button %>
       <% end %>
+      </div>
     </div>
   <% end %>
 <% end %>
