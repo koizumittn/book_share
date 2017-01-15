@@ -5,11 +5,11 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.create(book_params)
+    @book = Book.create(create_params)
   end
 
   def registration
-    @book = Book.new(book_params)
+    @book = Book.new(registration_params)
   end
 
   def search
@@ -50,7 +50,11 @@ class BooksController < ApplicationController
   end
 
   private
-  def book_params
+  def create_params
+    params.require(:book).permit(:title, :image_url, :detail_url, :author, :publisher).merge(user_id: current_user.id)
+  end
+
+  def registration_params
     params.require(:book).permit(:title, :image_url, :detail_url, :author, :publisher)
   end
 end
