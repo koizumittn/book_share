@@ -1,0 +1,11 @@
+<h2>書籍一覧</h2>
+<% if @books.present? %>
+  <div class="row">
+    <!-- 取得した書籍を表示 -->
+    <%= render partial: 'book_list' %>
+  </div>
+  <% else %>
+    <div class="row">
+      <p>書籍が登録されていません。</p>
+    </div>
+<% end %>
