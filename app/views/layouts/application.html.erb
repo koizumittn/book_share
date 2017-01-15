@@ -66,18 +66,21 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li class="hidden">
-            <a href="#page-top"></a>
+          <% if user_signed_in? %>
+          <li class="page-scroll">
+            <a href="/users/<%= current_user.id %>">マイページ</a>
           </li>
           <li class="page-scroll">
-            <a href="#portfolio">Portfolio</a>
+            <a href="/books/search">本の登録</a>
           </li>
           <li class="page-scroll">
-            <a href="#about">About</a>
+            <%= link_to 'ログアウト', "/users/sign_out", method: :delete %>
           </li>
+          <% else %>
           <li class="page-scroll">
-            <a href="#contact">Contact</a>
+          <%= link_to 'ログイン', "/users/sign_in" %>
           </li>
+          <% end %>
         </ul>
       </div>
       <!-- /.navbar-collapse -->
