@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  get '/books/search' => 'books#search'
+  resources :books, only: [:index, :create] do
+    collection do
+      get 'search'
+      post 'registration'
+    end
+  end
 end
