@@ -1,5 +1,15 @@
 class BooksController < ApplicationController
 
+  def index
+  end
+
+  def create
+  end
+
+  def registration
+    @book = Book.new(registration_params)
+  end
+
   def search
     @books = []
 
@@ -35,5 +45,10 @@ class BooksController < ApplicationController
         )
       @books << book
     end
+  end
+
+  private
+  def registration_params
+    params.require(:book).permit(:title, :image_url, :detail_url, :author, :publisher)
   end
 end

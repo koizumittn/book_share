@@ -1,0 +1,12 @@
+<%= link_to (image_tag(@book.image_url, style: "width: 70px;height: 100px;display: inline-block;")), @book.detail_url %><br>
+<%= @book.title %><br>
+<%= @book.author %><br>
+<%= @book.publisher %><br>
+<%= form_for @book, url: books_path do |f| %>
+  <%= f.hidden_field :title %>
+  <%= f.hidden_field :image_url %>
+  <%= f.hidden_field :detail_url %>
+  <%= f.hidden_field :author %>
+  <%= f.hidden_field :publisher %>
+  <%= f.submit 'この本を登録する！' %>
+<% end %>
