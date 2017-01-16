@@ -3,4 +3,9 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :books
+
+  def full_name
+    return "#{family_name} #{first_name}"
+  end
 end

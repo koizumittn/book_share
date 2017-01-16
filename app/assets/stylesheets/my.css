@@ -1,3 +1,25 @@
 .navbar-default {
   background-color: #50ffb0;
 }
+
+body {
+  background-color: #eaeaea;
+}
+
+.book_list {
+  background-color: #ffffff;
+}
+
+.book_list img {
+  width: 210px;
+  height: 300px;
+  display: block;
+  margin: 5px auto;
+  padding-top: 15px;
+}
+
+.button {
+  width 100%;
+  margin: 0 auto;
+  display: block;
+}
