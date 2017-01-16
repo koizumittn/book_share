@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       post 'registration'
+      patch 'req'
     end
   end
   root 'books#index'

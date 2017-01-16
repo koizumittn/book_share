@@ -12,6 +12,14 @@ class BooksController < ApplicationController
     @book = Book.new(registration_params)
   end
 
+  def req
+    requester = current_user
+    owner = User.find(params.require(:book)[:user_id])
+    book = Book.find(params.require(:book)[:id])
+    RequestMailer.request_email(requester, owner, book).deliver_now
+    redirect_to :root
+  end
+
   def search
     @books = []
 
